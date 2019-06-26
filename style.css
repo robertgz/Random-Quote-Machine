@@ -1,0 +1,28 @@
+:root {
+  --main-color: white;
+  --secondary-color: white;
+}
+
+body {
+  transition: background-color 3s ease;
+  background-color: var(--main-color);
+}
+
+.content {
+  background-color: var(--secondary-color);
+  margin-top: 80px;
+  padding: 40px 60px 40px 60px;
+}
+.quote-text-style {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--main-color);    
+}
+.button-row {
+  margin-top: 20px;
+}
+.new-quote-button {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  transition: background-color 1.5s ease;  
+  padding: 10px 15px 10px 15px;
+}
