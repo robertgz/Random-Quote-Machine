@@ -9,13 +9,13 @@ function setRandomColor() {
 }
   
 function getNewQuote() {
-  $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(json) {
-    var quote = $( json[0].content ).text();
-    var author =json[0].title;
+  $.getJSON("https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand&per_page=1", function(json) {
+    var quote = json[0].content.rendered;
+    var author =json[0].title.rendered;
     var twitterURL = "https://twitter.com/home/?status=" + author + "-" + quote;
    
-    var quoteItem = $("#quote, #quote-icon, #person-quoted");
-    $("#twitter-quote").attr("href", twitterURL);
+    var quoteItem = $("#quote, #quote-icon1, #quote-icon2, #person-quoted");
+    // $("#twitter-quote").attr("href", twitterURL);
     
     quoteItem.fadeOut(500, function() {
       $("#quote").html(quote);
